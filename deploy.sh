@@ -24,11 +24,25 @@ else
 fi
 
 OWNER="$(gh api user -q .login)"
+FULL_REPO="${OWNER}/${REPO_NAME}"
+
 echo ""
-echo "✅ 已推送到 https://github.com/${OWNER}/${REPO_NAME}"
-echo ""
-echo "接下来在浏览器打开并启用 Pages："
-echo "  gh repo edit ${OWNER}/${REPO_NAME} --enable-pages --pages-branch main --pages-path /"
+echo "✅ 已推送到 https://github.com/${FULL_REPO}"
+
+# 启用 GitHub Pages（main 分支根目录）
+if gh api "repos/${FULL_REPO}/pages" >/dev/null 2>&1; then
+  gh api "repos/${FULL_REPO}/pages" -X PUT \
+    -f "build_type=legacy" \
+    -f "source[branch]=main" \
+    -f "source[path]=/" >/dev/null
+else
+  gh api "repos/${FULL_REPO}/pages" -X POST \
+    -f "build_type=legacy" \
+    -f "source[branch]=main" \
+    -f "source[path]=/" >/dev/null
+fi
+
+echo "✅ GitHub Pages 已启用"
 echo ""
 echo "几分钟后访问："
 echo "  https://${OWNER}.github.io/${REPO_NAME}/"
