@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="亦庄出发 · 怀柔神堂峪一日游行程单" />
+  <title>神堂峪一日游 · 行程单</title>
+  <style>
+    :root {
+      --bg: #f4f7f2;
+      --card: #ffffff;
+      --text: #1a2e1f;
+      --muted: #5c6b60;
+      --border: #d8e4d8;
+      --accent: #2d7a4f;
+      --accent-light: #e8f5ec;
+      --water: #3a8fb5;
+      --water-light: #e8f4fa;
+      --sun: #c47d2a;
+      --sun-light: #fdf3e6;
+      --shadow: 0 8px 28px rgba(26, 46, 31, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 20px 16px 48px;
+      background: linear-gradient(165deg, #eef5ea 0%, var(--bg) 40%, #e8f0f5 100%);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; right: 0;
+      width: 140px; height: 140px;
+      background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .meta-chip {
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 10px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      margin: 16px 0;
+      flex-wrap: wrap;
+    }
+
+    button {
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    button.primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    button:active { transform: scale(0.98); }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h2 .icon { font-size: 20px; }
+
+    /* Timeline */
+    .timeline { list-style: none; margin: 0; padding: 0; }
+
+    .timeline li {
+      display: grid;
+      grid-template-columns: 72px 16px 1fr;
+      gap: 0 12px;
+      padding-bottom: 18px;
+      position: relative;
+    }
+
+    .timeline li:last-child { padding-bottom: 0; }
+
+    .timeline li:not(:last-child) .dot::after {
+      content: "";
+      position: absolute;
+      left: 7px;
+      top: 18px;
+      bottom: -4px;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .time {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      text-align: right;
+      padding-top: 2px;
+    }
+
+    .dot {
+      position: relative;
+      padding-top: 6px;
+    }
+
+    .dot span {
+      display: block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--accent-light);
+    }
+
+    .timeline li.highlight .dot span {
+      background: var(--sun);
+      border-color: var(--sun-light);
+      box-shadow: 0 0 0 3px var(--sun-light);
+    }
+
+    .event-title {
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+
+    .event-desc {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* Route */
+    .route-box {
+      background: var(--water-light);
+      border: 1px dashed #a8d4e8;
+      border-radius: 14px;
+      padding: 16px;
+      font-size: 14px;
+      text-align: center;
+      line-height: 2;
+    }
+
+    .route-box .arrow { color: var(--water); font-weight: 700; }
+
+    /* Checklist */
+    .checklist {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      padding: 10px 12px;
+      background: var(--bg);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .checklist input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .checklist label { cursor: pointer; flex: 1; }
+
+    /* Tips grid */
+    .tips {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    @media (max-width: 480px) {
+      .tips { grid-template-columns: 1fr; }
+    }
+
+    .tip-card {
+      padding: 14px;
+      border-radius: 14px;
+      font-size: 13px;
+    }
+
+    .tip-card strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .tip-card.green { background: var(--accent-light); color: #1e4d32; }
+    .tip-card.blue { background: var(--water-light); color: #1a4a5c; }
+    .tip-card.orange { background: var(--sun-light); color: #6b4218; }
+
+    /* Food */
+    .food-order {
+      background: var(--sun-light);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 14px;
+    }
+
+    .food-order ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    .food-order li { margin-bottom: 4px; }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 20px;
+    }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      .actions { display: none; }
+      section, header { box-shadow: none; break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="badge">怀柔 · 一日游</span>
+      <h1>神堂峪行程单</h1>
+      <p class="subtitle">亦庄京东总部出发 · 开车 · 早去晚回</p>
+      <div class="meta-row">
+        <span class="meta-chip">🚗 单程约 1.5–2h</span>
+        <span class="meta-chip">🥾 步行约 5–8 km</span>
+        <span class="meta-chip">🌤 18–29℃ 多云</span>
+        <span class="meta-chip">💰 栈道免费</span>
+      </div>
+    </header>
+
+    <div class="actions">
+      <button class="primary" onclick="window.print()">🖨 打印 / 存 PDF</button>
+      <button onclick="copyLink()">🔗 复制说明</button>
+    </div>
+
+    <section>
+      <h2><span class="icon">⏱</span> 时间安排</h2>
+      <ol class="timeline">
+        <li>
+          <div class="time">07:30</div>
+          <div class="dot"><span></span></div>
+          <div>
+            <div class="event-title">从亦庄出发</div>
+            <div class="event-desc">周末出城易堵，越早越稳。京承高速 → 怀柔 → 神堂峪道</div>
+          </div>
+        </li>
+        <li>
+          <div class="time">09:30</div>
+          <div class="dot"><span></span></div>
+          <div>
+            <div class="event-title">抵达 · 停车</div>
+            <div class="event-desc">导航「神堂柳堤」或栈道起点，补水、上厕所</div>
+          </div>
+        </li>
+        <li>
+          <div class="time">09:30<br>12:00</div>
+          <div class="dot"><span></span></div>
+          <div>
+            <div class="event-title">栈道漫步 + 拍照玩水</div>
+            <div class="event-desc">神堂柳堤 → 关山竞秀（约 3–4 km），树荫亲水，节奏放慢</div>
+          </div>
+        </li>
+        <li class="highlight">
+          <div class="time">12:00</div>
+          <div class="dot"><span></span></div>
+          <div>
+            <div class="event-title">🐟 虹鳟鱼午饭</div>
+            <div class="event-desc">提前订好 12:00 靠窗/河边位，免排队</div>
+          </div>
+        </li>
+        <li>
+          <div class="time">13:30<br>15:30</div>
+          <div class="dot"><span></span></div>
+          <div>
+            <div class="event-title">午后慢玩（三选一）</div>
+            <div class="event-desc">
+              ① 河边休息聊天（最轻松）<br>
+              ② 继续走栈道往后半段<br>
+              ③ 开车进神堂峪风景区看古长城（需购票）
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="time">15:30<br>16:30</div>
+          <div class="dot"><span></span></div>
+          <div>
+            <div class="event-title">下午茶 / 河边发呆</div>
+            <div class="event-desc">临水茶座，或栈道上找安静角落</div>
+          </div>
+        </li>
+        <li>
+          <div class="time">17:00</div>
+          <div class="dot"><span></span></div>
+          <div>
+            <div class="event-title">出发返程</div>
+            <div class="event-desc">17:00 前上路，避开晚高峰</div>
+          </div>
+        </li>
+        <li>
+          <div class="time">19:00</div>
+          <div class="dot"><span></span></div>
+          <div>
+            <div class="event-title">回到亦庄</div>
+            <div class="event-desc">视路况 ±30 分钟</div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2><span class="icon">🗺</span> 推荐路线</h2>
+      <div class="route-box">
+        神堂柳堤（起点）<br>
+        <span class="arrow">↓ 沿河栈道 3–4 km</span><br>
+        关山竞秀附近折返<br>
+        <span class="arrow">↓ 午饭</span><br>
+        河边休息 / 栈道后半段 / 风景区（可选）
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="icon">🍽</span> 午饭怎么点（2 人）</h2>
+      <div class="food-order">
+        <strong>提前电话订：周六 12:00 · 2 人 · 靠窗/河边</strong>
+        <ul>
+          <li>清蒸或烤虹鳟鱼 1 条（主菜）</li>
+          <li>山野菜 1 道</li>
+          <li>贴饼子 / 柴鸡蛋 1 道</li>
+        </ul>
+      </div>
+      <p style="font-size:13px;color:var(--muted);margin:12px 0 0;">
+        参考店：神堂峪饭店（010-89617886）、沿线农家院。直接电话订比到了再挑更稳。
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="icon">✅</span> 出发 Checklist</h2>
+      <ul class="checklist">
+        <li>
+          <input type="checkbox" id="c1" />
+          <label for="c1">电话订好 12:00 午饭（靠窗/河边 + 留鱼）</label>
+        </li>
+        <li>
+          <input type="checkbox" id="c2" />
+          <label for="c2">防滑运动鞋（栈道遇水会滑）</label>
+        </li>
+        <li>
+          <input type="checkbox" id="c3" />
+          <label for="c3">水、零食、充电宝</label>
+        </li>
+        <li>
+          <input type="checkbox" id="c4" />
+          <label for="c4">防晒帽、墨镜、防晒霜</label>
+        </li>
+        <li>
+          <input type="checkbox" id="c5" />
+          <label for="c5">驱蚊液</label>
+        </li>
+        <li>
+          <input type="checkbox" id="c6" />
+          <label for="c6">薄外套（山里比城区凉）</label>
+        </li>
+        <li>
+          <input type="checkbox" id="c7" />
+          <label for="c7">玩水备用：换鞋袜 / 毛巾（可选）</label>
+        </li>
+        <li>
+          <input type="checkbox" id="c8" />
+          <label for="c8">身份证、手机支付（部分小店信号一般）</label>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2><span class="icon">💡</span> 小贴士</h2>
+      <div class="tips">
+        <div class="tip-card green">
+          <strong>避堵</strong>
+          07:30 前出发，17:00 前返程
+        </div>
+        <div class="tip-card blue">
+          <strong>避排队</strong>
+          午饭务必预约，错开 11:30–13:00 高峰
+        </div>
+        <div class="tip-card orange">
+          <strong>停车</strong>
+          农家院部分免费，景区约 20 元/天
+        </div>
+        <div class="tip-card green">
+          <strong>晕车</strong>
+          范崎路弯多，副驾开窗、午饭别吃太撑
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      神堂峪一日游行程单 · 生成于 2026-06-05<br>
+      出发前建议再查一次实时路况与天气
+    </footer>
+  </div>
+
+  <script>
+    function copyLink() {
+      const text = [
+        "神堂峪一日游（亦庄出发）",
+        "07:30 出发 → 09:30 到神堂柳堤",
+        "09:30–12:00 栈道漫步",
+        "12:00 虹鳟鱼午饭（需提前预约）",
+        "13:30–16:30 午后慢玩 + 下午茶",
+        "17:00 返程 → 19:00 回亦庄",
+        "",
+        "导航：神堂柳堤 / 神堂峪栈道",
+        "订位：神堂峪饭店 010-89617886"
+      ].join("\n");
+
+      navigator.clipboard.writeText(text).then(() => {
+        alert("行程摘要已复制，可粘贴到微信/备忘录分享");
+      }).catch(() => {
+        prompt("复制以下内容分享：", text);
+      });
+    }
+  </script>
+</body>
+</html>
