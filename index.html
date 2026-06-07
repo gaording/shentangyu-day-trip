@@ -291,6 +291,60 @@
 
     .food-order li { margin-bottom: 4px; }
 
+    /* Guide sections */
+    .guide-box {
+      background: var(--bg);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .guide-box:last-child { margin-bottom: 0; }
+
+    .guide-box h3 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .guide-box ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .guide-box li { margin-bottom: 4px; }
+
+    .guide-box p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .tag.warn {
+      background: var(--sun-light);
+      color: #6b4218;
+    }
+
     footer {
       text-align: center;
       font-size: 12px;
@@ -310,7 +364,7 @@
     <header>
       <span class="badge">怀柔 · 一日游</span>
       <h1>神堂峪行程单</h1>
-      <p class="subtitle">亦庄京东总部出发 · 开车 · 早去晚回</p>
+      <p class="subtitle">亦庄京东总部出发 · 开车 · 睡懒觉版 · 晚出发晚回</p>
       <div class="meta-row">
         <span class="meta-chip">🚗 单程约 1.5–2h</span>
         <span class="meta-chip">🥾 步行约 5–8 km</span>
@@ -328,15 +382,15 @@
       <h2><span class="icon">⏱</span> 时间安排</h2>
       <ol class="timeline">
         <li>
-          <div class="time">07:30</div>
+          <div class="time">09:30</div>
           <div class="dot"><span></span></div>
           <div>
             <div class="event-title">从亦庄出发</div>
-            <div class="event-desc">周末出城易堵，越早越稳。京承高速 → 怀柔 → 神堂峪道</div>
+            <div class="event-desc">周末睡懒觉版，09:30 左右出发。京承高速 → 怀柔 → 神堂峪道</div>
           </div>
         </li>
         <li>
-          <div class="time">09:30</div>
+          <div class="time">11:30</div>
           <div class="dot"><span></span></div>
           <div>
             <div class="event-title">抵达 · 停车</div>
@@ -344,51 +398,51 @@
           </div>
         </li>
         <li>
-          <div class="time">09:30<br>12:00</div>
+          <div class="time">11:30<br>14:00</div>
           <div class="dot"><span></span></div>
           <div>
             <div class="event-title">栈道漫步 + 拍照玩水</div>
-            <div class="event-desc">神堂柳堤 → 关山竞秀（约 3–4 km），树荫亲水，节奏放慢</div>
+            <div class="event-desc">神堂柳堤 → 关山竞秀（约 3–4 km），浅滩踩水、捞小鱼，节奏放慢</div>
           </div>
         </li>
         <li class="highlight">
-          <div class="time">12:00</div>
+          <div class="time">14:00</div>
           <div class="dot"><span></span></div>
           <div>
             <div class="event-title">🐟 虹鳟鱼午饭</div>
-            <div class="event-desc">提前订好 12:00 靠窗/河边位，免排队</div>
+            <div class="event-desc">提前订好 14:00 靠窗/河边位，免排队</div>
           </div>
         </li>
         <li>
-          <div class="time">13:30<br>15:30</div>
+          <div class="time">15:30<br>17:30</div>
           <div class="dot"><span></span></div>
           <div>
             <div class="event-title">午后慢玩（三选一）</div>
             <div class="event-desc">
-              ① 河边休息聊天（最轻松）<br>
+              ① 神堂峪村河滩铺垫躺平（最推荐）<br>
               ② 继续走栈道往后半段<br>
               ③ 开车进神堂峪风景区看古长城（需购票）
             </div>
           </div>
         </li>
         <li>
-          <div class="time">15:30<br>16:30</div>
+          <div class="time">17:30<br>18:30</div>
           <div class="dot"><span></span></div>
           <div>
             <div class="event-title">下午茶 / 河边发呆</div>
-            <div class="event-desc">临水茶座，或栈道上找安静角落</div>
-          </div>
-        </li>
-        <li>
-          <div class="time">17:00</div>
-          <div class="dot"><span></span></div>
-          <div>
-            <div class="event-title">出发返程</div>
-            <div class="event-desc">17:00 前上路，避开晚高峰</div>
+            <div class="event-desc">临水茶座，或河滩继续泡脚发呆</div>
           </div>
         </li>
         <li>
           <div class="time">19:00</div>
+          <div class="dot"><span></span></div>
+          <div>
+            <div class="event-title">出发返程</div>
+            <div class="event-desc">19:00 前上路，避开晚高峰</div>
+          </div>
+        </li>
+        <li>
+          <div class="time">21:00</div>
           <div class="dot"><span></span></div>
           <div>
             <div class="event-title">回到亦庄</div>
@@ -410,9 +464,82 @@
     </section>
 
     <section>
+      <h2><span class="icon">💧</span> 玩水攻略</h2>
+      <div class="guide-box">
+        <h3>怎么玩</h3>
+        <p>不是游泳，是<strong>浅溪踩水</strong>：蹚水、捞小鱼小虾、水枪、泡脚。水深一般到脚踝～小腿。</p>
+      </div>
+      <div class="guide-box">
+        <h3>推荐玩水点</h3>
+        <ul>
+          <li><strong>神堂峪村入口</strong>（最开阔）：进村大门左手边大浅滩，右手边小片近卫生间。想直接玩水导航「神堂峪村」，别只导「神堂峪栈道」</li>
+          <li><strong>神堂柳堤</strong>：栈道临河，找浅滩下去踩水拍照</li>
+          <li><strong>九曲听琴</strong>：一侧探洞、一侧溪水，玩完洞再下水</li>
+        </ul>
+      </div>
+      <div class="guide-box">
+        <h3>按行程怎么玩</h3>
+        <ul>
+          <li>11:30–14:00 柳堤栈道：边走边找浅滩踩水</li>
+          <li>15:30–17:30 回村入口大浅滩：铺垫子 + 蹚水 + 躺平</li>
+          <li>17:30–18:30 河边茶座或继续泡脚</li>
+        </ul>
+      </div>
+      <p style="font-size:13px;color:var(--muted);margin:10px 0 0;">
+        注意：河水不算特别干净，别往深处走；栈道上是木板，需下到河边才能玩。
+      </p>
+    </section>
+
+    <section>
+      <h2><span class="icon">🛋</span> 躺平休息点</h2>
+      <div class="guide-box">
+        <h3>能躺着歇的地方</h3>
+        <ul>
+          <li><strong>神堂峪村入口溯溪区</strong>（最推荐）：河滩 + 缓坡草皮，铺野餐垫可躺，停车近</li>
+          <li><strong>神堂柳堤</strong>：柳荫临水，河堤旁找块地铺垫休息</li>
+          <li><strong>神堂太公营地</strong>：栈道中段，适合铺开垫子小睡</li>
+          <li><strong>向阳洞天 / 关山竞秀</strong>：洞里凉快，适合坐着歇，不适合躺</li>
+          <li><strong>农家院河边茶座</strong>：有木椅，适合坐着发呆，不能躺平</li>
+        </ul>
+        <p style="margin-top:8px;">没有大草坪公园，<strong>自带野餐垫</strong>是关键。往上游或偏里走一点，更容易找到安静角落。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2><span class="icon">🛒</span> 物资采购</h2>
+      <div class="guide-box">
+        <h3>✅ 提前买（亦庄出发前 / 路上超市）</h3>
+        <div class="tag-row">
+          <span class="tag">野餐垫</span>
+          <span class="tag">拖鞋/溯溪鞋</span>
+          <span class="tag">水</span>
+          <span class="tag">零食</span>
+          <span class="tag">水果</span>
+          <span class="tag">驱蚊液</span>
+          <span class="tag">防晒</span>
+          <span class="tag">纸巾湿巾</span>
+          <span class="tag">垃圾袋</span>
+        </div>
+        <p style="margin-top:8px;">当地几乎没有正经超市，野餐垫和拖鞋基本买不到。前一晚或当天早上在亦庄买好最稳。</p>
+      </div>
+      <div class="guide-box">
+        <h3>🏪 到了再买也行</h3>
+        <ul>
+          <li><strong>午饭</strong>：虹鳟鱼农家菜，电话订 14:00 位</li>
+          <li><strong>饮料 / 咖啡</strong>：栈道上村咖（1402 咖啡、神堂咖啡等）</li>
+          <li><strong>小渔网 / 水枪</strong>：周末热门区偶尔有小贩，有但不保证</li>
+        </ul>
+      </div>
+      <div class="guide-box">
+        <h3>➖ 可选不带</h3>
+        <p>小渔网、水枪——想捞鱼再带；没有也不影响，主要就是踩水和躺平。</p>
+      </div>
+    </section>
+
+    <section>
       <h2><span class="icon">🍽</span> 午饭怎么点（2 人）</h2>
       <div class="food-order">
-        <strong>提前电话订：周六 12:00 · 2 人 · 靠窗/河边</strong>
+        <strong>提前电话订：周六 14:00 · 2 人 · 靠窗/河边</strong>
         <ul>
           <li>清蒸或烤虹鳟鱼 1 条（主菜）</li>
           <li>山野菜 1 道</li>
@@ -429,35 +556,47 @@
       <ul class="checklist">
         <li>
           <input type="checkbox" id="c1" />
-          <label for="c1">电话订好 12:00 午饭（靠窗/河边 + 留鱼）</label>
+          <label for="c1">电话订好 14:00 午饭（靠窗/河边 + 留鱼）</label>
         </li>
         <li>
           <input type="checkbox" id="c2" />
-          <label for="c2">防滑运动鞋（栈道遇水会滑）</label>
+          <label for="c2">野餐垫（躺平必备，当地买不到）</label>
         </li>
         <li>
           <input type="checkbox" id="c3" />
-          <label for="c3">水、零食、充电宝</label>
+          <label for="c3">拖鞋 / 溯溪鞋 + 换袜毛巾（玩水必备）</label>
         </li>
         <li>
           <input type="checkbox" id="c4" />
-          <label for="c4">防晒帽、墨镜、防晒霜</label>
+          <label for="c4">水、零食、水果（提前买好带上）</label>
         </li>
         <li>
           <input type="checkbox" id="c5" />
-          <label for="c5">驱蚊液</label>
+          <label for="c5">防滑运动鞋（栈道走路用）</label>
         </li>
         <li>
           <input type="checkbox" id="c6" />
-          <label for="c6">薄外套（山里比城区凉）</label>
+          <label for="c6">防晒帽、墨镜、防晒霜</label>
         </li>
         <li>
           <input type="checkbox" id="c7" />
-          <label for="c7">玩水备用：换鞋袜 / 毛巾（可选）</label>
+          <label for="c7">驱蚊液（水边蚊子多）</label>
         </li>
         <li>
           <input type="checkbox" id="c8" />
-          <label for="c8">身份证、手机支付（部分小店信号一般）</label>
+          <label for="c8">薄外套（山里比城区凉）</label>
+        </li>
+        <li>
+          <input type="checkbox" id="c9" />
+          <label for="c9">纸巾 / 湿巾 / 垃圾袋</label>
+        </li>
+        <li>
+          <input type="checkbox" id="c10" />
+          <label for="c10">充电宝、身份证、手机支付</label>
+        </li>
+        <li>
+          <input type="checkbox" id="c11" />
+          <label for="c11">小渔网 / 水枪（可选，当地偶尔有卖）</label>
         </li>
       </ul>
     </section>
@@ -467,25 +606,25 @@
       <div class="tips">
         <div class="tip-card green">
           <strong>避堵</strong>
-          07:30 前出发，17:00 前返程
+          09:30 左右出发，19:00 前返程
         </div>
         <div class="tip-card blue">
           <strong>避排队</strong>
-          午饭务必预约，错开 11:30–13:00 高峰
+          午饭务必预约，错开 13:30–15:00 高峰
         </div>
         <div class="tip-card orange">
-          <strong>停车</strong>
-          农家院部分免费，景区约 20 元/天
+          <strong>导航</strong>
+          玩水导「神堂峪村」，徒步导「神堂柳堤」
         </div>
         <div class="tip-card green">
-          <strong>晕车</strong>
-          范崎路弯多，副驾开窗、午饭别吃太撑
+          <strong>采购</strong>
+          野餐垫、拖鞋、零食提前买，当地不好买
         </div>
       </div>
     </section>
 
     <footer>
-      神堂峪一日游行程单 · 生成于 2026-06-05<br>
+      神堂峪一日游行程单 · 生成于 2026-06-07<br>
       出发前建议再查一次实时路况与天气
     </footer>
   </div>
@@ -493,15 +632,16 @@
   <script>
     function copyLink() {
       const text = [
-        "神堂峪一日游（亦庄出发）",
-        "07:30 出发 → 09:30 到神堂柳堤",
-        "09:30–12:00 栈道漫步",
-        "12:00 虹鳟鱼午饭（需提前预约）",
-        "13:30–16:30 午后慢玩 + 下午茶",
-        "17:00 返程 → 19:00 回亦庄",
+        "神堂峪一日游（亦庄出发 · 睡懒觉版）",
+        "09:30 出发 → 11:30 到神堂柳堤",
+        "11:30–14:00 栈道漫步 + 踩水",
+        "14:00 虹鳟鱼午饭（需提前预约）",
+        "15:30–18:30 河滩躺平 + 下午茶",
+        "19:00 返程 → 21:00 回亦庄",
         "",
-        "导航：神堂柳堤 / 神堂峪栈道",
-        "订位：神堂峪饭店 010-89617886"
+        "导航：神堂柳堤 / 神堂峪村（玩水）",
+        "订位：神堂峪饭店 010-89617886",
+        "必带：野餐垫、拖鞋/溯溪鞋、水、零食水果"
       ].join("\n");
 
       navigator.clipboard.writeText(text).then(() => {
